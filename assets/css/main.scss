@@ -1,0 +1,305 @@
+@import 'normalize';
+@import 'placeholders';
+@import 'font-awesome/font-awesome';
+@import 'skeleton';
+
+// GENERAL STUFF
+body{
+  font-family: monospace;
+  overflow-x: hidden;
+
+  .container{
+    padding: 20px 0;
+  }
+  h3{
+    font-size: 2em;
+    text-align: center
+  }
+  h4{
+    font-size: 1.5em;
+  }
+  hr{
+    width: 100%;
+    border-top: 1px solid #DDDDDC;
+    margin: 10px 0;
+  }
+  p {
+    padding: 0 40px;
+    font-size: 1.3em;
+    line-height: 2em;
+  }
+}
+.text-center{
+  text-align: center;
+}
+
+//hamburger
+.h-container{
+  display: none;
+}
+
+// NAVBAR
+nav{
+  width: 20%;
+  margin-right: 5%;
+  margin-top: 20px;
+  float: left;
+  position: fixed;
+
+  a{
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover:not(.active){
+      color: gray;
+    }
+  }
+  .active{
+    color: #FF2E2E;
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+
+    li{
+      padding: 2vh 10px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+    img{
+        width: 100%;
+    }
+    .img-container{
+      margin: 0 auto;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+// LANDING PAGE
+.content{
+  float: right;
+  width: 75%;
+  #landing{
+    height: 100vh;
+    .intro{
+      padding: 7vh 0 0 0;
+      .face{
+        padding-top: 10vh;
+        background-color: white;
+        margin: 0 auto;
+      }
+      img{
+        width: 250px;
+      }
+      .text{
+        padding: 10vh 5vh;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// PROJECTS PAGE
+#projects{
+  .project-container{
+  .project-image{
+    padding-right: 20px;
+    img{
+    max-width: 100%;
+    margin: 0 auto;
+    }
+  }
+  .project-desc{
+    @extend .text-center;
+  }
+  }
+}
+
+// ARTICLES PAGE
+#articles{
+  .article-list{
+    @extend .text-center;
+    p{
+      display: inline-block;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+// CONTACT PAGE
+#contact{
+  p a{
+    color: black;
+  }
+  .icons-wrap{
+		max-width: 700px;
+		margin: 70px auto 50px;
+		display: flex;
+		justify-content: center;
+
+		.icon{
+      color: #FF9292;
+			margin:0 40px;
+			transition: 0.6s;
+
+			&:hover{
+				color: #FF2E2E;
+			}
+		}
+	}
+  .email{
+    font-size: 3em;
+    padding:0;
+    margin: 0;
+  }
+}
+
+// Media Queries
+
+@media (max-width: 768px){
+  body{
+    position: relative;
+  }
+  nav{
+    display: none;
+  }
+
+  #about, #projects, #articles{
+    padding-top: 40px;
+  }
+
+  .content{
+    float: none;
+    width: 100%;
+
+    .four.columns {
+      width: 100%;
+    }
+    .eight.columns {
+      width: 100%;
+    }
+    .face{
+      float: none;
+    }
+    .face img{
+      display: inline-block;
+      max-width: 50%;
+    }
+    .text{
+      display: block;
+
+      h2{
+        font-size: 2em;
+      }
+    }
+  }
+  .content #landing .intro {
+    padding: 13vh 30px;
+}
+  .content #landing .intro img {
+    margin: 0 auto;
+}
+  .content #landing .intro .face {
+    padding-top: 0;
+    margin-left: 32%;
+  }
+  #contact .icons-wrap .icon {
+    margin: 0 15px;
+  }
+  h4{
+    text-align: center;
+  }
+  #projects .project-container .project-image {
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  #contact p a{
+    font-size: 0.8em;
+  }
+  .column, .columns {
+    margin-left: 0;
+  }
+
+  // HAMBURGER
+  .h-container{
+    width: 100%;
+    display: block;
+    position: fixed;
+    z-index: 5;
+    background-color: white;
+  }
+  .logo-container{
+    display: inline-block;
+    margin: 1em 0 0 1em;
+  }
+  .hamburger{
+    float: right;
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    height: 45px;
+  }
+  .hamburger span{
+    display: block;
+    margin: 12px 0;
+    border: 1px solid black;
+    transition: 0.6s;
+  }
+  #span-first-child{
+    margin-top: 1.8em;
+  }
+
+  .small-nav{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 30px;
+    display: none;
+
+    a{
+      color: black;
+      text-decoration: none;
+      transition: 0.3s;
+
+      &:hover:not(.active){
+        color: gray;
+      }
+    }
+    .active{
+      color: #FF2E2E;
+    }
+    ul{
+      list-style: none;
+      margin: 0;
+
+      li{
+        padding: 2vh 10px;
+        text-align: center;
+        font-size: 1.5em;
+      }
+      img{
+          width: 100%;
+      }
+      .img-container{
+        margin: 0 auto;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  .hamburger.red{
+    span{
+      border-color: #ff8181;
+    }
+  }
+}
+@media (max-width: 425px) {
+  .content #landing .intro {
+    padding: 20vh 30px 0 30px;
+}
+}
